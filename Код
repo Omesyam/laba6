@@ -1,0 +1,27 @@
+#include <iostream>
+#include <Windows.h>
+#include<stdio.h>
+#include<iomanip>
+
+using namespace std;
+int main()
+{
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
+    char symb;
+    cout << "Input symbol" << endl;
+    cin>>symb;
+        switch (symb)
+        {
+        case'.': cout << "Крапка  "; break;
+        case',': cout << "Кома  "; break;
+        case':': cout << "Двокрапка  "; break;
+        case'!': cout << "Знак оклику  "; break;
+        case'?': cout << "Знак питання  "; break;
+        default: cout << "Не знак пунктуації  "; break;
+    }
+ 
+    system("pause");
+    return 0;
+    
+}
