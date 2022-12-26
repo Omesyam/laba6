@@ -1,0 +1,58 @@
+#include "Header.h"
+using namespace std;
+double useFormula1(int x, int y, int z)
+{
+    if ((10 * x - y / pow(z, 3)) + pow(x, 4) / 4 != 0 && pow(z, 3) + pow(x, 4) / 4 != 0 && pow(x, 3) + 4 * y >= 0)
+    {
+        double rez = (3 * (abs(y)) - pow(pow(x, 3) + 4 * y, 1 / 2)) / (10 * x - y / pow(z, 3) + pow(x, 4) / 4);
+        return rez;
+    }
+    else
+    {
+        cout << "Не є ОДЗ!";
+        return rez; //зміна коду
+    }
+
+}
+double useFormula2(int x, int y)
+{
+    double grad = 0.0175;
+    double r = 45 * grad;
+    if (5 * x + 1 != 0)
+    {
+        return (pow(2.71, 2) + pow(y, -x) * cos(r) * x) / 5 * x + 1 +
+            sin((pow(x, 2) + y) * grad);
+    }
+    else
+    {
+        cout << "Не є ОДЗ!";
+        return 0;
+    }
+}
+void function(double a)
+{
+    int num = round(a);
+    int separator = 0;
+    int separate_nums[3];
+    int min;
+    for (int i = 1; i < 4; i++)
+    {
+        if (i < 3 && i != 2) {
+            separate_nums[i - 1] = (num % (int)pow(10, i)) - separator;
+            separator = separate_nums[i - 1];
+        }
+        else if (i == 2) {
+            separate_nums[i - 1] = ((num % (int)pow(10, i)) - separator) / 10;
+            separator = separate_nums[i - 1];
+        }
+        else if (i >= 3) {
+            separate_nums[i - 1] = (num - separator) / 100;
+        }
+    }
+    min = separate_nums[0];
+    for (int i = 0; i < 3; i++)
+    {
+        if (separate_nums[i] < min) min = separate_nums[i];
+    }
+    cout << "Мінімальний розряд числа " << num << " це " << min;
+}
