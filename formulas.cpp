@@ -29,7 +29,7 @@ cout << "Не є ОДЗ!";
 return 0;
 }
 }
-int function(int a, int b)
+int function(int a, int b) //даня лох 
 {
 int t = a + b; // Делаем копию суммы
 t -= ((int) (a+b) * 10) / 10; // Сначала
